@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :profiles
-  resources :users, only: :create
+  # resources :users
   # resources :comments
   # resources :activities
   # resources :moods
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  
 end
