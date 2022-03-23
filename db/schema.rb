@@ -44,10 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_202305) do
 
   create_table "moods", force: :cascade do |t|
     t.string "name"
-    t.integer "city_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_moods_on_city_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -69,6 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_202305) do
   add_foreign_key "activities", "cities"
   add_foreign_key "activities", "moods"
   add_foreign_key "comments", "users"
-  add_foreign_key "moods", "cities"
   add_foreign_key "profiles", "users"
 end
